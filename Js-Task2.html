@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Align content to the top */
+            align-items: center;
+            height: 100vh; /* Make the body fill the viewport height */
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            margin-top: 20px; /* Adjust the top margin as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Js-Task2</h1>
+        <p>Enter a string to sort alphabetically:</p>
+        <input placeholder="Example string:" type="text" id="stringInput">
+        <button onclick="sortAndDisplay()">Sort</button>
+        <p>Expected output:</p>
+        <p id="sortedOutput"></p>
+    </div>
+    <script>
+        function sortStringAlphabetically(inputString) {
+            return inputString.split('').sort().join('');
+        }
+        function sortAndDisplay() {         
+            const stringInput = document.getElementById('stringInput').value;
+            const sortedOutput = document.getElementById('sortedOutput');
+            const sortedString = sortStringAlphabetically(stringInput);
+            sortedOutput.textContent = `Sorted String: ${sortedString}`;
+        }
+    </script>
+</body>
+</html>
